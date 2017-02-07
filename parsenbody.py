@@ -4,23 +4,49 @@ from __future__ import division
 
 datafile = "figure8.out"
 
-numParticles = 0 # this shouldnt change but its printed out every time
-time = [] # eg. [1, 2, 3, 4]
-mass = [0] * numParticles
-position = [[]] * numParticles
-velocity = [[]] * numParticles
-
 # this some fragile ass parsing
-with open(datafile) as f:
-	numParticles = int(f.readline())
-	linenum = 2
-	for lineTerminated in f:
-		line = lineTerminated.rstrip()
-		if line != "===":
-			if linenum == 1:
-				numParticles = int(line)
-			elif linenum == 2:
-				time.append(float(line))
-			linenum += 1
-		else:
-			linenum = 1
+def parseNBodyData(datafile):
+	with open(datafile) as f:
+		numPreLines = 2
+		numParticles = int(f.readline())
+		time = []
+		masses = [0 for _ in range(numParticles)]
+		positions = [[] for _ in range(numParticles)]
+		velocities = [[] for _ in range(numParticles)]
+
+		linenum = 2
+		for lineTerminated in f:
+			line = lineTerminated.rstrip()
+			if line.count(',') == 0:
+				if (linenum % numParticles) == 2:
+					time.append(float(line))
+				linenum += 1
+			elif line.count(',') > 0:
+				objectId = (linenum - (numPreLines + 1)) % numParticles
+				for i, entry in enumerate(line.split(',')):
+					if i == 0:
+						masses[objectId] = float(entry.split(' ')[0])
+					elif i == 1:
+						pos = []
+						for val in entry.split(' ')[:-1]:
+							pos.append(float(val))
+						positions[objectId].append(pos)
+
+					elif i == 2:
+						vel = []
+						for val in entry.split(' '):
+							vel.append(float(val))
+						velocities[objectId].append(vel)
+				linenum += 1
+			elif line == "===":
+				linenum = 1
+
+	return {
+		'n': numParticles,
+		'time': time,
+		'm': masses,
+		'pos': positions,
+		'vel': velocities
+	}
+
+print parseNBodyData('figure8.out')
