@@ -161,10 +161,6 @@ int main(int argc, char *argv[])
     real (* pos)[NDIM] = new real[n][NDIM];     // positions for all particles
     real (* vel)[NDIM] = new real[n][NDIM];     // velocities for all particles
 
-    cout << 'n' << endl;
-    cout << 't' << endl;
-    cout << "m, x y z, vx vy vz" << endl;
-    cout << "===" << endl;
     get_snapshot(mass, pos, vel, n);
 
     evolve(mass, pos, vel, n, t, dt_param, dt_dia, dt_out, dt_tot, init_out,
