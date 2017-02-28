@@ -1,11 +1,20 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 
-from __future__ import division
+import numpy as np
 
 datafile = "figure8.out"
 
-# this some fragile ass parsing
 def parseNBodyData(datafile):
+	"""
+	Returns a dictionary with the following fields:
+	'n': number of particles
+	'time': a 1d array of times
+	'm': a 1d array of length 'n' with the masses of each planet
+	'planets': a 2d array where the first index goes up to 'n' and
+		and the second index is '0' for positions and '1' for 'velocities'.
+		Both positions and velocities are arrays where each element is an
+		array with 3 points representing the x, y and z components respectively.
+	"""
 	with open(datafile) as f:
 		numPreLines = 2
 		numParticles = int(f.readline())
@@ -41,12 +50,16 @@ def parseNBodyData(datafile):
 			elif line == "===":
 				linenum = 1
 
+	data = np.array([time, positions, velocities])
+	planets = [[] for _ in range(numParticles)]
+	for i in range(0, numParticles):
+		planets[i].append(positions[i])
+		planets[i].append(velocities[i])
+
 	return {
 		'n': numParticles,
-		'time': time,
-		'm': masses,
-		'pos': positions,
-		'vel': velocities
+		'time': np.array(time),
+		'm': np.array(masses),
+		'planets': np.array(planets)
 	}
 
-print parseNBodyData('figure8.out')
