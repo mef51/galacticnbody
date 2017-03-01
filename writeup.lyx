@@ -3682,7 +3682,7 @@ name "fig:Unbound"
 
 \end_inset
 
-Unbound when x = 1.9, -1.9 for the two wing objects
+Unbound system when x = 1.9, -1.9 for the two wing objects
 \end_layout
 
 \end_inset
@@ -5939,6 +5939,56 @@ Closed Orbit of 5 Bodies
 \end_inset
 
 
+\end_layout
+
+\begin_layout Section*
+\paragraph_spacing other 0
+\noindent
+\align center
+
+\size largest
+Code
+\end_layout
+
+\begin_layout Standard
+All code is available at 
+\begin_inset CommandInset href
+LatexCommand href
+target "https://github.com/mef51/galacticnbody"
+
+\end_inset
+
+ .
+ 
+\end_layout
+
+\begin_layout Standard
+I used Python.
+ I wrote a parser in a file called 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+parsenbody.py
+\end_layout
+
+\end_inset
+
+ which reads the data in output file into some python objects.
+ The second file 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+nbodyplots.py
+\end_layout
+
+\end_inset
+
+ then uses that data to make all the plots in one go.
+ Copies of both are attached at the end.
 \end_layout
 
 \end_body
