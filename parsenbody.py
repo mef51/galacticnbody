@@ -47,7 +47,7 @@ def parseNBodyData(datafile):
 							vel.append(float(val))
 						velocities[objectId].append(vel)
 				linenum += 1
-			elif line == "===":
+			if line == "===":
 				linenum = 1
 
 	data = np.array([time, positions, velocities])

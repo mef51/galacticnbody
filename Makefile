@@ -4,6 +4,7 @@ binary:
 	@echo "Done."
 
 simdir = simulations
+special = special
 
 figure8:
 	./nbody_sh1 -o 0.01 < $(simdir)/figure8.in > $(simdir)/figure8.out
@@ -33,4 +34,10 @@ chaos6:
 	./nbody_sh1 -o 0.01 < $(simdir)/chaos6.in > $(simdir)/chaos6.out
 
 rings:
-	./nbody_sh1 -o 0.01 < $(simdir)/rings.in > $(simdir)/rings.out
+	./nbody_sh1 -o 0.01 < $(special)/rings.in > $(special)/rings.out
+
+star:
+	./nbody_sh1 -o 0.01 < $(special)/star.in > $(special)/star.out
+
+star2:
+	./nbody_sh1 -o 0.01 < $(special)/star2.in > $(special)/star2.out
