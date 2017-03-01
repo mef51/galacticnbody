@@ -29,5 +29,8 @@ chaos4:
 chaos5:
 	./nbody_sh1 -o 0.01 < $(simdir)/chaos5.in > $(simdir)/chaos5.out
 
+chaos6:
+	./nbody_sh1 -o 0.01 < $(simdir)/chaos6.in > $(simdir)/chaos6.out
+
 rings:
 	./nbody_sh1 -o 0.01 < $(simdir)/rings.in > $(simdir)/rings.out
