@@ -62,9 +62,9 @@ for filename in glob.glob(os.path.join(simdir, '*.in')):
 		1: {'x': planets[1,0,:tend,0], 'y': planets[1,0,:tend,1], 'lw': 0.8, 'alpha': 0.5, 'line': 'b-'},
 		2: {'x': planets[2,0,:tend,0], 'y': planets[2,0,:tend,1], 'lw': 0.8, 'alpha': 0.5, 'line': 'r-'},
 		# Starting Positions
-		3: {'x': planets[0,0,0,0], 'y': planets[0,0,0,1], 'line': 'ko'},
-		4: {'x': planets[1,0,0,0], 'y': planets[1,0,0,1], 'line': 'bo'},
-		5: {'x': planets[2,0,0,0], 'y': planets[2,0,0,1], 'line': 'ro'},
+		3: {'x': planets[0,0,0,0], 'y': planets[0,0,0,1], 'line': 'ko', 'ms': 10},
+		4: {'x': planets[1,0,0,0], 'y': planets[1,0,0,1], 'line': 'bo', 'ms': 10},
+		5: {'x': planets[2,0,0,0], 'y': planets[2,0,0,1], 'line': 'ro', 'ms': 10},
 		# Final Positions
 		6: {'x': planets[0,0,-1,0], 'y': planets[0,0,-1,1], 'line': 'k*', 'ms': 9, 'mfc': 'none'},
 		7: {'x': planets[1,0,-1,0], 'y': planets[1,0,-1,1], 'line': 'b*', 'ms': 9, 'mfc': 'none'},
