@@ -8,11 +8,11 @@ simdir = simulations
 figure8:
 	./nbody_sh1 -o 0.01 < $(simdir)/figure8.in > $(simdir)/figure8.out
 
-flingout:
-	./nbody_sh1 -o 0.01 < $(simdir)/flingout.in > $(simdir)/flingout.out
+flungout:
+	./nbody_sh1 -o 0.01 < $(simdir)/flungout.in > $(simdir)/flungout.out
 
-flingout2:
-	./nbody_sh1 -o 0.01 < $(simdir)/flingout2.in > $(simdir)/flingout2.out
+flungout2:
+	./nbody_sh1 -o 0.01 < $(simdir)/flungout2.in > $(simdir)/flungout2.out
 
 chaos:
 	./nbody_sh1 -o 0.01 < $(simdir)/chaos.in > $(simdir)/chaos.out
