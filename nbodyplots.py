@@ -66,9 +66,9 @@ for filename in glob.glob(os.path.join(simdir, '*.in')):
 		4: {'x': planets[1,0,0,0], 'y': planets[1,0,0,1], 'line': 'bo', 'ms': 10},
 		5: {'x': planets[2,0,0,0], 'y': planets[2,0,0,1], 'line': 'ro', 'ms': 10},
 		# Final Positions
-		6: {'x': planets[0,0,-1,0], 'y': planets[0,0,-1,1], 'line': 'k*', 'ms': 9, 'mfc': 'none'},
-		7: {'x': planets[1,0,-1,0], 'y': planets[1,0,-1,1], 'line': 'b*', 'ms': 9, 'mfc': 'none'},
-		8: {'x': planets[2,0,-1,0], 'y': planets[2,0,-1,1], 'line': 'r*', 'ms': 9, 'mfc': 'none'},
+		6: {'x': planets[0,0,-1,0], 'y': planets[0,0,-1,1], 'line': 'k*', 'ms': 14, 'mfc': 'none'},
+		7: {'x': planets[1,0,-1,0], 'y': planets[1,0,-1,1], 'line': 'b*', 'ms': 14, 'mfc': 'none'},
+		8: {'x': planets[2,0,-1,0], 'y': planets[2,0,-1,1], 'line': 'r*', 'ms': 14, 'mfc': 'none'},
 		# Time Sequence
 		9:  {'x': planets[0,0,:tend,0][::tstep], 'y': planets[0,0,:tend,1][::tstep], 'lw': 0, 'line': 'ko', 'ms':2},
 		10: {'x': planets[1,0,:tend,0][::tstep], 'y': planets[1,0,:tend,1][::tstep], 'lw': 0, 'line': 'bo', 'ms':2},
