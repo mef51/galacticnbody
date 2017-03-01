@@ -1,4 +1,4 @@
-all:
+binary:
 	@echo "Building..."
 	@g++ -o nbody_sh1 nbody_sh1.cpp
 	@echo "Done."
@@ -22,6 +22,12 @@ chaos2:
 
 chaos3:
 	./nbody_sh1 -o 0.01 < $(simdir)/chaos3.in > $(simdir)/chaos3.out
+
+chaos4:
+	./nbody_sh1 -o 0.01 < $(simdir)/chaos4.in > $(simdir)/chaos4.out
+
+chaos5:
+	./nbody_sh1 -o 0.01 < $(simdir)/chaos5.in > $(simdir)/chaos5.out
 
 rings:
 	./nbody_sh1 -o 0.01 < $(simdir)/rings.in > $(simdir)/rings.out
