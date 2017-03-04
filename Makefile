@@ -37,4 +37,4 @@ rings:
 	./nbody_sh1 -o 0.01 < $(special)/rings.in > $(special)/rings.out
 
 star:
-	./nbody_sh1 -o 0.001 < $(special)/star.in > $(special)/star.out
+	./nbody_sh1 -o 0.01 < $(special)/star.in > $(special)/star.out
