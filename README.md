@@ -1,5 +1,5 @@
 
-![star](special/star.png)
+![star](special/special.gif)
 
 --------------
 _Simulation code README below (by Piet Hut and Jun Makino):_
